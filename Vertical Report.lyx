@@ -5,10 +5,138 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+\usepackage{lipsum}
+
+%\pagestyle{fancy}  
+\fancyhead{} % clear all header fields  
+\fancyfoot{} % clear all footer fields 
+\renewcommand{\headrulewidth}{0pt} % no line in header area  
+\renewcommand{\footrulewidth}{0pt} % no line in header area
+
+\cfoot{\thepage}
+\makeatletter
+\let\ps@plain\ps@fancy   % Plain page style = fancy page style
+\makeatother
+
+\usepackage{listings}
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
+
+\usepackage{helvet} % add in some fonts
+
+% rename table of contents
+%\usepackage[norsk]{babel}
+%\addto\captionsnorsk{%
+%\renewcommand{\contentsname}{Table of Contents}}
+
+\AtBeginDocument{\renewcommand\contentsname{Table of Contents}}
+
+\usepackage{subcaption}
+\usepackage{cleveref}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\usepackage{caption}
+\captionsetup[figure]{justification=centering}
+%\renewcommand\eqref{
+%\renewcommand\ref{
+\end_preamble
 \use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
 \maintain_unincluded_children false
+\begin_forced_local_layout
+Format 60
+Style "In Preamble"
+	Category "FrontMatter"
+	Margin Static
+	LatexType Paragraph
+	InTitle 0
+	InPreamble 1
+	TocLevel -1000
+	NeedProtect 0
+	KeepEmpty 0
+	NextNoIndent 0
+	CommandDepth 0
+	LatexName "dummy"
+	ItemCommand item
+	LabelType No_Label
+	EndLabelType No_Label
+	ParagraphGroup "0"
+	ParIndent MM
+	ParSkip 0.4
+	ItemSep 0
+	TopSep 0
+	BottomSep 0
+	LabelBottomSep 0
+	ParSep 0
+	NewLine 1
+	Align Block
+	AlignPossible Block, Center, Layout, Left, Right
+	FreeSpacing 0
+	PassThru 0
+	ParbreakIsNewline 0
+	RefPrefix OFF
+	HTMLLabelFirst 0
+	HTMLStyle
+div.standard {
+margin-bottom: 2ex;
+}
+	EndHTMLStyle
+	HTMLForceCSS 0
+	HTMLTitle 0
+	Spellcheck 1
+	ForceLocal 1
+End
+Style "In Title"
+	Category "FrontMatter"
+	Margin Static
+	LatexType Paragraph
+	InTitle 1
+	InPreamble 0
+	TocLevel -1000
+	NeedProtect 0
+	KeepEmpty 0
+	NextNoIndent 0
+	CommandDepth 0
+	LatexName "dummy"
+	ItemCommand item
+	LabelType No_Label
+	EndLabelType No_Label
+	ParagraphGroup "0"
+	ParIndent MM
+	ParSkip 0.4
+	ItemSep 0
+	TopSep 0
+	BottomSep 0
+	LabelBottomSep 0
+	ParSep 0
+	NewLine 1
+	Align Block
+	AlignPossible Block, Center, Layout, Left, Right
+	FreeSpacing 0
+	PassThru 0
+	ParbreakIsNewline 0
+	RefPrefix OFF
+	HTMLLabelFirst 0
+	HTMLStyle
+div.standard {
+margin-bottom: 2ex;
+}
+	EndHTMLStyle
+	HTMLForceCSS 0
+	HTMLTitle 0
+	Spellcheck 1
+	ForceLocal 1
+End
+\end_forced_local_layout
 \language english
-\language_package default
+\language_package none
 \inputencoding auto
 \fontencoding global
 \font_roman "default" "default"
@@ -26,10 +154,20 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\paperfontsize default
-\spacing single
-\use_hyperref false
-\papersize default
+\float_placement H
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize letterpaper
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -49,15 +187,16 @@
 \paperorientation portrait
 \suppress_date false
 \justification true
-\use_refstyle 1
+\use_refstyle 0
+\boxbgcolor #e7e6e6
 \index Index
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 0.75in
-\topmargin 0.75in
-\rightmargin 0.75in
-\bottommargin 1in
+\leftmargin 1in
+\topmargin 1.25in
+\rightmargin 1in
+\bottommargin 1.15in
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -65,7 +204,7 @@
 \quotes_language english
 \papercolumns 1
 \papersides 1
-\paperpagestyle default
+\paperpagestyle fancy
 \tracking_changes false
 \output_changes false
 \html_math_output 0
@@ -75,63 +214,251 @@
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset Float figure
+placement t
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset VSpace 0.5in*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename afrl.png
+	lyxscale 35
+	width 1.25in
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Title
-Vertical Wind Tunnel Characterization 2017 Report
-\end_layout
 
-\begin_layout Author
-Lt Dayle Chang, Dr.
- Aaron Altman, and Bob Guyton
-\end_layout
-
-\begin_layout Section
-Theory
+\series bold
+TGF Transonic Validation Report
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-P_{t,\textrm{{wo}}}=P_{t\textrm{,{raw}}}-P_{t,\textrm{{w}}}
-\end{equation}
+\paragraph_spacing single
+\align center
 
-\end_inset
-
-
+\size small
+prepared by
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-Q_{\textrm{{wo}}}=P_{t,wo}-P_{s,\textrm{{wo}}}
-\end{equation}
+\align center
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-dfasdf & asdfasdfd\\
-\\
-\\
-\\
-\\
-\\
-\end{align*}
-
-\end_inset
-
+\series bold
+Lt Dayle Chang AFRL/RQVX
+\series default
  
 \end_layout
 
-\begin_layout Section
-Results
+\begin_layout Standard
+\align center
+in coordination with
 \end_layout
 
 \begin_layout Standard
-setup
+\align center
+
+\series bold
+Dr.
+ Aaron Altman AFRL/RQVX
+\begin_inset Newline newline
+\end_inset
+
+Bob Guyton AFRL/RQVX
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.6pt"
+separation "8pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "lightgray"
+status open
+
+\begin_layout Plain Layout
+
+\size small
+\bar under
+DISTRIBUTION STATEMENT C
+\bar default
+ - Distribution authorized to U.S.
+ Government agencies and their contractors; Critical Technology; 15 Mar
+ 2017.
+ Other requests for this document shall be referred to AFRL/RQVX
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\series bold
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+fontfamily{ptm}
+\backslash
+selectfont FOR OFFICIAL USE ONLY}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Header
+
+\family sans
+\series bold
+\size small
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+fontfamily{phv}
+\backslash
+selectfont 
+\backslash
+small UNCLASSIFIED // FOR OFFICIAL USE ONLY}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\begin_inset VSpace 0.75in*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\begin_inset VSpace 0.75in*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Section
+Analysis
 \end_layout
 
 \begin_layout Standard
@@ -168,6 +495,3463 @@ Streamwise Normalized Plots.
  absolute) and the dynamics see a much larger percent difference (2-15%
  difference).
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/1 Pre- and Post- WindOff Comparisons on 14-Aug STATIC.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparisons between wind-off data points before and after the run on the
+ first day of testing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/2 Pre- and Post- WindOff Comparisons on 15-Aug STATIC.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparisons between wind-off data points before and after runs on the second
+ day of testing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/3 Post-Windoff Recovery on 15-Aug STATIC.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wind-off data points after a run on the second day of testing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/4 Tunnel Condition Held and Compared to Previous Data STATIC WINDOFF PREF ATMOS.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison between waiting 0 and 5 minutes before acquiring data at 50 feet
+ per second
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/5 Tunnel Condition Held and Compared to Previous Data STATIC WINDOFF PREF ATMOS.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison between waiting 0 and 5 minutes before acquiring data at 95 feet
+ per second
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/6 Tunnel Condition Held and Compared to Previous Data STATIC WINDOFF PREF ATMOS.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison between waiting 0 and 5 minutes before acquiring data at 140
+ feet per second
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/7 Time Sample Study STATIC WINDOFF PREF ATMOS.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/8 Time Sample Study STATIC WINDOFF PREF ATMOS.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/9 Time Sample Study STATIC WINDOFF PREF ATMOS.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/10 Streamwise Pressure Distributions STATIC WINDOFF PREF ATMOS.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/10 Streamwise Pressure Distributions TOTAL WINDOFF PREF ATMOS.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/11 Streamwise Pressure Distributions STATIC WINDOFF PREF ATMOS.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/11 Streamwise Pressure Distributions TOTAL WINDOFF PREF ATMOS.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/12 Streamwise Pressure Distributions STATIC WINDOFF PREF ATMOS.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/12 Streamwise Pressure Distributions TOTAL WINDOFF PREF ATMOS.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/13 Streamwise Wall-Normalized Pressure Distributions DYNAMIC WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/13 Streamwise Wall-Normalized Pressure Distributions STATIC WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/13 Streamwise Wall-Normalized Pressure Distributions TOTAL WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/13 Streamwise Wall-Normalized Pressure Distributions TOTAL WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/14 Streamwise Wall-Normalized Pressure Distributions DYNAMIC WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/14 Streamwise Wall-Normalized Pressure Distributions STATIC WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/14 Streamwise Wall-Normalized Pressure Distributions TOTAL WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/15 Streamwise Wall-Normalized Pressure Distributions DYNAMIC WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/15 Streamwise Wall-Normalized Pressure Distributions STATIC WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/15 Streamwise Wall-Normalized Pressure Distributions TOTAL WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/14 Streamwise Wall-Normalized Pressure Distributions DYNAMIC WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/14 Streamwise Wall-Normalized Pressure Distributions STATIC WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/14 Streamwise Wall-Normalized Pressure Distributions TOTAL WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/15 Streamwise Wall-Normalized Pressure Distributions DYNAMIC WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/15 Streamwise Wall-Normalized Pressure Distributions STATIC WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename more_plots/15 Streamwise Wall-Normalized Pressure Distributions TOTAL WINDOFF PREF NORM.png
+	lyxscale 35
+	width 75text%
+	groupId set1
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Analysis of Q Ratio (Bob Guyton)
+\end_layout
+
+\begin_layout Standard
+Q Ratio is a sensitive non-dimensional parameter that gives the fraction
+ (or percent) of probe Q values in comparison to the tunnel Q value.
+\end_layout
+
+\begin_layout Standard
+Q Ratio = Qprobe / Qtunnel
+\end_layout
+
+\begin_layout Standard
+Q Ratio uncertainty depends on tunnel speed.
+ It is approximately: 2% at Q=3 (50 fps) 0.7% at Q=10 (95 fps) 0.3% at Q=20
+ (140 fps) 
+\end_layout
+
+\begin_layout Standard
+The database was collected a 3 nominal speeds – 50, 95, and 140 fps.
+ These correspond to nominal Q values of 3, 10, and 20 psf.
+\end_layout
+
+\begin_layout Standard
+Orientations of 0, 90, and 270 degrees and heights of 0, 2, 2.5, 3, 4, and
+ 10 ft were collected at the above speeds.
+ 
+\end_layout
+
+\begin_layout Standard
+3 ft height is the most extensive database produced.
+ Analysis concentrates on this height.
+ Other heights have been reviewed and are consistent with findings at 3
+ ft.
+ 
+\end_layout
+
+\begin_layout Standard
+Initial review indiciates
+\end_layout
+
+\begin_layout Itemize
+Large data scatter, non repeatable
+\end_layout
+
+\begin_layout Itemize
+Non convergence with acquisition Duration and Delay
+\end_layout
+
+\begin_layout Itemize
+Erratic profile across tunnel – probes suspect 
+\end_layout
+
+\begin_layout Standard
+Detailed review reveals criticality of tunnel setting Q 
+\end_layout
+
+\begin_layout Itemize
+Less than 1% tolerance is necessary 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Leads to excellent repeatability
+\end_layout
+
+\begin_layout Itemize
+Duration and delay show convergence
+\end_layout
+
+\begin_layout Itemize
+Regions of smooth profile (probe confidence)
+\end_layout
+
+\begin_layout Itemize
+Identification of “sweet spots” 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prelim_brief/DataScatter1.png
+	lyxscale 50
+	width 75text%
+	groupId brief
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of Qratio scatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prelim_brief/MatchedQrepeatability1.png
+	lyxscale 50
+	width 75text%
+	groupId brief
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of Qratio for matched Q at 2.92 psf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prelim_brief/MatchedQrepeatability3.png
+	lyxscale 50
+	width 75text%
+	groupId brief
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of Qratio scatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prelim_brief/QScatter1.png
+	lyxscale 50
+	width 75text%
+	groupId brief
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of Qratio scatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prelim_brief/QScatter2.png
+	lyxscale 50
+	width 75text%
+	groupId brief
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of Qratio scatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prelim_brief/QScatter3.png
+	lyxscale 50
+	width 75text%
+	groupId brief
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of Qratio scatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prelim_brief/SweetSpot_50.png
+	lyxscale 50
+	width 75text%
+	groupId brief
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of Qratio scatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prelim_brief/SweetSpot_95.png
+	lyxscale 50
+	width 75text%
+	groupId brief
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of Qratio scatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+“Sweet spots”
+\end_layout
+
+\begin_layout Standard
+Q ratio is critically dependent on the Q value.
+ 
+\end_layout
+
+\begin_layout Standard
+In the past we have held to the notion that Q test section is 95% of the
+ Q tunnel.
+\end_layout
+
+\begin_layout Standard
+This data suggests otherwise.
+ It shows that very small changes in Qtunnel can make this factor vary between
+ 90% and 110%.
+ 
+\end_layout
+
+\begin_layout Standard
+“Sweet spots” are defined here as settings where the factor is close to
+ 100% 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prelim_brief/HeightVariation95fpsQratio.png
+	lyxscale 50
+	width 75text%
+	groupId brief
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of Qratio scatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prelim_brief/HeightVariation95fpsPTratio.png
+	lyxscale 50
+	width 75text%
+	groupId brief
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of Qratio scatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prelim_brief/HeightVariation95fpsPSratio.png
+	lyxscale 50
+	width 75text%
+	groupId brief
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of Qratio scatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prelim_brief/HeightVariation95fpsVratio.png
+	lyxscale 50
+	width 75text%
+	groupId brief
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of Qratio scatter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A database needs to be generated with Q’s matched to 0.5% across the height
+ and orientation scans.
+ Subsequent entries might need to focus on a single speed, (mid-range) as
+ a means to validate this conclusion.
+\end_layout
+
+\begin_layout Standard
+The stability of condition for a given Q setting should be analyzed by experimen
+t to see if there are warm-up affects or certain settings where the flow
+ instability contributes to the drifting Q.
+ We should look for settings that are in our favor for maintain constant
+ Q.
+ 
+\end_layout
+
+\begin_layout Standard
+The tunnel pitot-static probe should be analyzed by CFD to see if it represents
+ speed accurately at its location.
+ Else, the assessments wrt height may not be intuitive.
+\end_layout
+
+\begin_layout Standard
+Repeat: 
+\end_layout
+
+\begin_layout Standard
+The measurements being made are delicate changes in pressure.
+ Tubing lag time, tunnel unsteadiness, and drifting tunnel conditions are
+ all in play simultaneously.
+ This is more than the likely source of complex results.
+\end_layout
+
+\begin_layout Standard
+With these factors combined, duration and delay will be difficult to isolate.
+ There values should be chosen on the high side for all future data for
+ this set-up.
+ 
+\end_layout
+
+\begin_layout Section
+Round 2 (Dayle)
+\end_layout
+
+\begin_layout Standard
+To better understand the expected data in the upcoming second entry of the
+ VWT Characterization Experiment, I decided to manipulate some sample data
+ that would be reperesentative of the experiment and see how well a correlation
+ can be drawn.
+ I varied the input (60 points) with a random uniform distribution between
+ -2 and 2 and used a cubic function as my true analytic model to represent
+ areas of both low and high slope, which is what I expect to see in the
+ upcoming test.
+ I took the analytic model and added normally distributed noise with a mean
+ of 
+\begin_inset Formula $0$
+\end_inset
+
+ and standard deviations of 2 and 
+\begin_inset Formula $8$
+\end_inset
+
+ to represent coherent and noisy test data, respectively.
+ The 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+ value was used as the metric of best fit and the results are shown below.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[H]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+centering 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.49
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{plots/case_best.png}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.49
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{plots/case_worst.png}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+caption{Noise Study}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+label{probe 1}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We see that if the standard deviation of the noise is half that of the range
+ of the input, we can get some meaningful results.
+ If the standard deviation of the noise is double that of the range of the
+ input, the scatter becomes random.
+ After performing this quick study, I realized that I can plot the data
+ from the first entry in a similar fashion and should give an indication
+ of the noise levels in the system.
+ I also expected to plot a best fit line similar to the plot on the left
+ with low noise based on what we currently know.
+\end_layout
+
+\begin_layout Subsection
+Low Dynamic Pressure
+\end_layout
+
+\begin_layout Standard
+The results from the first entry are shown in the subsequent figures.
+ The first batch of test points that were plagued with data switching issues
+ and the direct Q measurements performed at the end of the first entry were
+ excluded.
+ The dynamic pressures for probe 10 and the pressure readings from all probes
+ are plotted.
+ Note that clusters of points are visible.
+ The points seem more randomly scatter than having a linear trend, as evidenced
+ by the negative slope of the curve fit.
+ The plot below shows the results for the lowest Q setting.
+ The uncertainty of the measurement is shown in the plus or minus band on
+ the fitted model.
+ The sorted points are those that were either sampled over a period of 10
+ minutes or more or were taken after a warm-up period of 5 minutes.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[H] 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{low_q_poly3_10.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{low_q_poly3_all.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{sort_low_q_poly3_10.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{sort_low_q_poly3_all.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+caption{Low Q Data with Cubic Fit.
+ From top to bottom: all points and sorted points}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Medium Dynamic Pressure
+\end_layout
+
+\begin_layout Standard
+The same is shown for the medium Q data.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[H] 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{med_q_poly3_10.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{med_q_poly3_all.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{sort_med_q_poly3_10.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{sort_med_q_poly3_all.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{med_directq_poly3_10.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{med_directq_poly3_all.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+caption{Medium Q Data with Cubic Fit.
+ From top to bottom: all, sorted, and direct reading points} 	
+\backslash
+end{figure} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+High Dynamic Pressure
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[H] 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{high_q_poly3_10.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{high_q_poly3_all.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{sort_high_q_poly3_10.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{sort_high_q_poly3_all.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{high_directq_poly3_10.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{high_directq_poly3_all.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+caption{High Q Data with Cubic Fit.
+ From top to bottom: all, sorted, and direct reading points}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Histogram
+\end_layout
+
+\begin_layout Standard
+Below is a plot of histograms for both the tunnel dynamic pressures and
+ the probe dynamic pressures where the low, medium, and high Q cases are
+ shown in each row, respectively, and the tunnel and probe dynamic pressures
+ are shown left to right.
+ The bin size is equal to the measurement uncertainty.
+ Two distributions are plotted and their relative 
+\begin_inset Quotes eld
+\end_inset
+
+goodness of fit
+\begin_inset Quotes erd
+\end_inset
+
+ is shown in the legend, where 1 is the best fit.
+ I don't know why the metric on the histogram on the bottom right exceeded
+ 1.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[H] 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{low_q_hist_tun.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{low_q_hist_probe.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{med_q_hist_tun.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{med_q_hist_probe.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{high_q_hist_tun.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{subfigure}{0.43
+\backslash
+textwidth} 
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+includegraphics[width=1
+\backslash
+linewidth]{high_q_hist_probe.eps}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{subfigure}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+caption{Histogram of Pressure Data}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+label{fig:histogram}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Summary
+\end_layout
+
+\begin_layout Standard
+Tabulated below are the results from the curve-fitting on probe 10.
+ Fit order refers to whether the fit is linear (1st order) or cubic (3rd
+ order).
+ R
+\begin_inset Formula $^{2}$
+\end_inset
+
+ is a metric of the "goodness" of fit.
+ RMSE stands for the root mean square of the error and is a measure of the
+ standard deviation of the error, or the noise of the system.
+ NU ratio is something I made up which stands for the noise-to-uncertainty
+ ratio and is a measure of the system noise to the instrument uncertainty.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dynamic Pressure 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fit Order 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\begin_inset Formula $^{2}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RMSE [psf] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NU Ratio 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.063 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.047 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.76 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.065 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.048 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.77 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medium 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.090 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.213 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.44 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medium 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.193 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.204 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.29 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.198 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.397 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.40 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.270 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.384 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.19 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From these results, the low dynamic pressure case exhibits the most random
+ behavior, especially from the negative linear trends.
+ The medium but especially the high dynamic pressure case seems to indicate
+ that the system noise is quite high, higher than the instrument uncertainty.
+ Cubic fits produce better fits at the medium and high dynamic pressures
+ suggesting the data is more nonlinear than linear.
+\end_layout
+
+\begin_layout Subsection
+Turbulence Intensity
+\end_layout
+
+\begin_layout Standard
+Given a velocity difference, the associated difference in dynamic pressure
+ can be calculated using the derivation shown below.
+ If two measurements are taken, their dynamic pressures can be described
+ as a function of their respective velocities.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+q_{1}=\frac{1}{2}\rho v_{1}^{2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+q_{2}=\frac{1}{2}\rho v_{2}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If density is assumed constant, the two measurements can be related as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+q_{2}-q_{1}=\frac{1}{2}\rho v_{2}^{2}-\frac{1}{2}\rho v_{1}^{2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\Delta q=\frac{1}{2}\rho(v_{2}^{2}-v_{1}^{2})\label{eq:delq}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the difference between the two velocity measurements are small, they
+ too can be related with a turbulence intensity measurement 
+\begin_inset Formula $T_{i}$
+\end_inset
+
+, where turbulence intensity is defined as the ratio between the standard
+ deviation of the velocity, 
+\begin_inset Formula $\Delta v$
+\end_inset
+
+, and the mean velocity, 
+\begin_inset Formula $v$
+\end_inset
+
+ (
+\begin_inset Formula $T_{i}=\Delta v/v$
+\end_inset
+
+).
+ 
+\begin_inset Formula 
+\[
+v_{2}-v_{1}=\Delta v=v_{i}\cdot T_{i}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+v_{2}=T_{i}\cdot v_{1}+v_{1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+v_{2}=(T_{i}+1)\cdot v_{1}\label{eq:vdef}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:vdef"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:delq"
+
+\end_inset
+
+ can be combined and the subscripts dropped 
+\begin_inset Formula 
+\begin{align}
+\Delta q & =\frac{1}{2}\rho(v_{2}^{2}-v_{1}^{2})\nonumber \\
+ & =\frac{1}{2}\rho(v_{1}^{2}(T_{i}+1)^{2}-v_{1}^{2})\nonumber \\
+ & =\frac{1}{2}\rho(v^{2}(T_{i}^{2}+2T_{i}+1-1))\nonumber \\
+\Delta q & =\frac{1}{2}\rho v^{2}(T_{i}^{2}+2T_{i})\label{eq:fin}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:fin"
+
+\end_inset
+
+ describes the change in pressure given a turbulence intensity, 
+\begin_inset Formula $T_{i}$
+\end_inset
+
+, a mean velocity, 
+\begin_inset Formula $v$
+\end_inset
+
+, and a density, 
+\begin_inset Formula $\rho$
+\end_inset
+
+.
+ Given Tina's measured turbulence intensity without the net installed of
+ 1.5%, the turbulence quantities are compared with the measured quantities
+ at the given velocities.
+ The subscript 
+\begin_inset Formula $t$
+\end_inset
+
+ denotes turbulence quantities, the subscript 
+\begin_inset Formula $i$
+\end_inset
+
+ denotes the calculated ideal value (given incompressible flow), and the
+ subscript 
+\begin_inset Formula $m$
+\end_inset
+
+ denotes the measured values from this experiment.
+ The ideal dynamic pressure, 
+\begin_inset Formula $q_{i}$
+\end_inset
+
+, is compared with the measured average dynamic pressure, 
+\begin_inset Formula $\bar{q}_{m}$
+\end_inset
+
+, by a percent difference from the ideal.
+ The standard deviation of the dynamic pressure due to turbulence, 
+\begin_inset Formula $\Delta q_{t}$
+\end_inset
+
+, is compared with the measured standard deviation of the experiment (from
+ cubic fit of probe 10), 
+\begin_inset Formula $\Delta q_{m}$
+\end_inset
+
+, by a ratio 
+\begin_inset Formula $\Delta q_{t}/\Delta q_{m}$
+\end_inset
+
+.
+ The values are tabulated below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="8">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v$
+\end_inset
+
+ [ft/s] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta v_{t}$
+\end_inset
+
+ [ft/s] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q_{i}$
+\end_inset
+
+ [psf] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\bar{q}_{m}[psf]$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Difference 
+\begin_inset Formula $q$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta q_{t}$
+\end_inset
+
+ [psf] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta q_{m}$
+\end_inset
+
+ [psf]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ratio 
+\begin_inset Formula $\Delta q$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+140 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.10 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23.30 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21.76 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-6.64% 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.704 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.048 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.07 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+95 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.43 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.73 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.20 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-4.93% 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.324 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.204 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.63 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.75 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.97 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.96 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.35% 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.090 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.384 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.27 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparing turbulence parameters with deviations in the data.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first thing to note is that the incompressible values for dynamic pressure
+ match experiment well at the lowest 
+\begin_inset Formula $q$
+\end_inset
+
+ but get high at the middle and highest values of 
+\begin_inset Formula $q$
+\end_inset
+
+.
+ Maybe there are compressible effects at the wall.
+ The second observation is that the "noise" of our system at the lowest
+ 
+\begin_inset Formula $q$
+\end_inset
+
+ was 4 times greater than that of the turbulence Tina measured but at middle
+ to high 
+\begin_inset Formula $q$
+\end_inset
+
+, the "noise" of our system is much smaller than the turbulence Tina measured.
+ To add weight to this analysis, we should consider the uncertainty of the
+ hot-wire measurement.
 \end_layout
 
 \begin_layout Section
@@ -225,6 +4009,16 @@ Are there implications for the SARL characterization effort?
 Would CFD be useful and where/how? 
 \end_layout
 
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
@@ -232,793 +4026,16 @@ Would CFD be useful and where/how?
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/1 Pre- and Post- WindOff Comparisons on 14-Aug STATIC.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-some caption
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+\begin_layout Section
+Appendix: Run Log
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/2 Pre- and Post- WindOff Comparisons on 15-Aug STATIC.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/3 Post-Windoff Recovery on 15-Aug STATIC.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/4 Tunnel Condition Held and Compared to Previous Data STATIC WINDOFF PREF ATMOS.png
-	width 100line%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/5 Tunnel Condition Held and Compared to Previous Data STATIC WINDOFF PREF ATMOS.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/6 Tunnel Condition Held and Compared to Previous Data STATIC WINDOFF PREF ATMOS.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage clearpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/7 Time Sample Study STATIC WINDOFF PREF ATMOS.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/8 Time Sample Study STATIC WINDOFF PREF ATMOS.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/9 Time Sample Study STATIC WINDOFF PREF ATMOS.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/10 Streamwise Pressure Distributions STATIC WINDOFF PREF ATMOS.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/10 Streamwise Pressure Distributions TOTAL WINDOFF PREF ATMOS.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/11 Streamwise Pressure Distributions STATIC WINDOFF PREF ATMOS.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage clearpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/11 Streamwise Pressure Distributions TOTAL WINDOFF PREF ATMOS.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/12 Streamwise Pressure Distributions STATIC WINDOFF PREF ATMOS.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/12 Streamwise Pressure Distributions TOTAL WINDOFF PREF ATMOS.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/13 Streamwise Wall-Normalized Pressure Distributions DYNAMIC WINDOFF PREF NORM.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/13 Streamwise Wall-Normalized Pressure Distributions STATIC WINDOFF PREF NORM.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/13 Streamwise Wall-Normalized Pressure Distributions TOTAL WINDOFF PREF NORM.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage clearpage
-\end_inset
-
-
+Below is the log of the test (make the font smaller on this run log)
 \end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/14 Streamwise Wall-Normalized Pressure Distributions DYNAMIC WINDOFF PREF NORM.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/14 Streamwise Wall-Normalized Pressure Distributions STATIC WINDOFF PREF NORM.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/14 Streamwise Wall-Normalized Pressure Distributions TOTAL WINDOFF PREF NORM.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/15 Streamwise Wall-Normalized Pressure Distributions DYNAMIC WINDOFF PREF NORM.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/15 Streamwise Wall-Normalized Pressure Distributions STATIC WINDOFF PREF NORM.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement p
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/15 Streamwise Wall-Normalized Pressure Distributions TOTAL WINDOFF PREF NORM.png
-	height 28theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 
+\begin_layout Section
+Appendix: Log
 \end_layout
 
 \end_body

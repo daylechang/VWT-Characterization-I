@@ -1,0 +1,4 @@
+Pref - (Pref_wo - SA) = new_pref
+Pref + (SA - Pref_wo) = new_pref
+
+assumes SA > pref_wo most of the time

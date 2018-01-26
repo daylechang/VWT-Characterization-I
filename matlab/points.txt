@@ -1,0 +1,21 @@
+250, 262:267
+25 Aug
+
+# 1st line is point number(s) to plot
+# 2nd line is figure title
+# everything else is ignored
+
+matlab notation
+
+584:591,611:630
+547, 549, 551, 553, 555, 557, 559, 561, 563
+
+
+53-58
+59-63
+64-68
+
+# direct q measurement configuration
+
+probe 11 total -> channel 217
+probe 10 total -> channel 121 (the same as before)

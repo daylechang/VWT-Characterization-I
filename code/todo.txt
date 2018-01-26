@@ -1,0 +1,13 @@
+WAR
+General's visit
+
+comparing centerline q
+
+wake deficit
+models are larger and larger and in places that aren't traditional
+we want to know what the flow actually is so we can make better informed testing
+buoyancy effects?
+
+can we get the same q that was calculated by running a differential?
+
+make q plots normalized to wall q
