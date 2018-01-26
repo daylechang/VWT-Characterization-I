@@ -1,0 +1,1025 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.75in
+\topmargin 0.75in
+\rightmargin 0.75in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Vertical Wind Tunnel Characterization 2017 Report
+\end_layout
+
+\begin_layout Author
+Lt Dayle Chang, Dr.
+ Aaron Altman, and Bob Guyton
+\end_layout
+
+\begin_layout Section
+Theory
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P_{t,\textrm{{wo}}}=P_{t\textrm{,{raw}}}-P_{t,\textrm{{w}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Q_{\textrm{{wo}}}=P_{t,wo}-P_{s,\textrm{{wo}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+dfasdf & asdfasdfd\\
+\\
+\\
+\\
+\\
+\\
+\end{align*}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Standard
+setup
+\end_layout
+
+\begin_layout Standard
+We started re-running the data and I started noticing that the pre-run windoff
+ data was different than the post-run windoff data.
+ The pre- and post- run windoff data for the 2 days of testing are shown
+ in fig 1 and 2.
+ We wanted to see if this was just an effect of tube lag so we sampled the
+ wind-off once more about 1 or 2 minutes later and then sampled some more
+ after the model change (fig 3).
+ The results led me to believe that there's a lot more lag than we thought
+ and that the lag was greatest at windoff, since the pressure differential
+ is lowest.
+ To see if this was true, we went on condition and waited 5 minutes before
+ acquiring data and compared it to the same runs from before (fig 4-6: higher
+ pressure profiles are the ones acquired after 5 min.) and saw some differences.
+ If this really is due to tube lag, we should be able to see the pressure
+ profiles change from the one profile to the other profile if we sampled
+ the data over a longer period of time.
+ On a side note, the 'ATMOS' tag in the plot title refers to plots that
+ have the standard atmosphere correction we talked about applied.
+ We did a time sample study for about 10 minutes collecting data every minute
+ and in figures 7-9 you can see the profile "change" from one to the other.
+ The delta pressure between profiles show that our standard atmosphere correctio
+n isn't quite perfect, but gets us close.
+ Finally, the static and total streamwise pressure profiles are plotted
+ in figures 10 through 12 with the extra station 3 profile reflecting data
+ acquired after 10 minutes of going on condition.
+\end_layout
+
+\begin_layout Standard
+Streamwise Normalized Plots.
+ The static and totals see a much smaller percent difference (because they're
+ absolute) and the dynamics see a much larger percent difference (2-15%
+ difference).
+ 
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+I would like for us to discuss either in person or via e-mail: 
+\end_layout
+
+\begin_layout Itemize
+any additional testing? We talked briefly over Mike's luncheon that if we
+ saw anything "bad" we'd have to re-do even more but is this considered
+ "bad"? We were very consistent in how we acquired the data (go up to condition,
+ immediately take data).
+ Do we want to re-run this matrix once the reference line is in place? 
+\end_layout
+
+\begin_layout Itemize
+any additional plots? I didn't show the 90 deg/270 deg and clocking effects
+ so I can include that later.
+ 
+\end_layout
+
+\begin_layout Itemize
+does this change anything about below-lip entry? 
+\end_layout
+
+\begin_layout Itemize
+data hand-off.
+ Currently I'm using MATLAB to call and process the data - are you OK with
+ me showing you how to use my code if you or someone else in the future
+ wants to look at the data? Documentation will go along with that.
+\end_layout
+
+\begin_layout Standard
+furthermore:
+\end_layout
+
+\begin_layout Itemize
+Do we continue using the rake? Do we need to complement with another tool,
+ like smoke viz or PIV? 
+\end_layout
+
+\begin_layout Itemize
+Do we measure below the lip? Do we need any repeat runs? What's the priority,
+ repeat runs or below the lip? 
+\end_layout
+
+\begin_layout Itemize
+Are there implications for the SARL characterization effort? 
+\end_layout
+
+\begin_layout Itemize
+Would CFD be useful and where/how? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/1 Pre- and Post- WindOff Comparisons on 14-Aug STATIC.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+some caption
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/2 Pre- and Post- WindOff Comparisons on 15-Aug STATIC.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/3 Post-Windoff Recovery on 15-Aug STATIC.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/4 Tunnel Condition Held and Compared to Previous Data STATIC WINDOFF PREF ATMOS.png
+	width 100line%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/5 Tunnel Condition Held and Compared to Previous Data STATIC WINDOFF PREF ATMOS.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/6 Tunnel Condition Held and Compared to Previous Data STATIC WINDOFF PREF ATMOS.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/7 Time Sample Study STATIC WINDOFF PREF ATMOS.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/8 Time Sample Study STATIC WINDOFF PREF ATMOS.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/9 Time Sample Study STATIC WINDOFF PREF ATMOS.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/10 Streamwise Pressure Distributions STATIC WINDOFF PREF ATMOS.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/10 Streamwise Pressure Distributions TOTAL WINDOFF PREF ATMOS.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/11 Streamwise Pressure Distributions STATIC WINDOFF PREF ATMOS.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/11 Streamwise Pressure Distributions TOTAL WINDOFF PREF ATMOS.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/12 Streamwise Pressure Distributions STATIC WINDOFF PREF ATMOS.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/12 Streamwise Pressure Distributions TOTAL WINDOFF PREF ATMOS.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/13 Streamwise Wall-Normalized Pressure Distributions DYNAMIC WINDOFF PREF NORM.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/13 Streamwise Wall-Normalized Pressure Distributions STATIC WINDOFF PREF NORM.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/13 Streamwise Wall-Normalized Pressure Distributions TOTAL WINDOFF PREF NORM.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/14 Streamwise Wall-Normalized Pressure Distributions DYNAMIC WINDOFF PREF NORM.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/14 Streamwise Wall-Normalized Pressure Distributions STATIC WINDOFF PREF NORM.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/14 Streamwise Wall-Normalized Pressure Distributions TOTAL WINDOFF PREF NORM.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/15 Streamwise Wall-Normalized Pressure Distributions DYNAMIC WINDOFF PREF NORM.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/15 Streamwise Wall-Normalized Pressure Distributions STATIC WINDOFF PREF NORM.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement p
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename //52zhtv-as-720v/AFRL.RQ-Working/AFRL.RQV/_RQVX/Experimental_Fluid_Dynamics/Test Engineer's Status Reports/VWT/Characterization 2017A/Prelim Data Aug2017/15 Streamwise Wall-Normalized Pressure Distributions TOTAL WINDOFF PREF NORM.png
+	height 28theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
